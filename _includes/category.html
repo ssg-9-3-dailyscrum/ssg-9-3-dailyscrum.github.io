@@ -1,13 +1,13 @@
 <article class="post">
   <header class="post-header home">
-    <div class="post-title">Author - <span id='category-name'></span></div>
+    <div class="post-title">Author - <span id='category-name'>All</span></div>
   </header>
 
   <div class="post-content">
     {%- if site.posts.size > 0 -%}
     <ul class="post-list">
       {%- for post in site.posts -%}
-      <li class="post-list-item post-author-{{ post.author | downcase }}">
+      <li class="post-list-item post-author-{{ post.author }}">
         {%- assign date_format = "%Y/%m/%d" -%}
         <span class="post-date">{{ post.date | date: date_format }}</span>
         <a class="post-link" href="{{ post.url | relative_url }}">
@@ -23,25 +23,24 @@
 
 <script src="/public/js/jquery-3.4.1.slim.min.js"></script>
 <script>
-  function filterByAuthor() {
-    if (window.location.hash) {
-      let hash = window.location.hash.substring(1).toLowerCase();
-      $('#category-name').text(hash.charAt(0).toUpperCase() + hash.slice(1));
+function filterByAuthor() {
+  if (window.location.hash) {
+    let hash = decodeURIComponent(window.location.hash.substring(1));
+    $('#category-name').text(hash);
 
-      $('.post-list-item').each((i, e) => {
-        if (!$(e).hasClass('post-author-' + hash)) {
-          $(e).hide();
-        } else {
-          $(e).show();
-        }
-      });
-    } else {
-      // 해시가 없으면 모두 표시
-      $('.post-list-item').show();
-      $('#category-name').text('All');
-    }
+    $('.post-list-item').each((i, e) => {
+      if (!$(e).hasClass('post-author-' + hash)) {
+        $(e).hide();
+      } else {
+        $(e).show();
+      }
+    });
+  } else {
+    $('.post-list-item').show();
+    $('#category-name').text('All');
   }
+}
 
-  $(window).on('hashchange', filterByAuthor);
-  $(document).ready(filterByAuthor);
+$(window).on('hashchange', filterByAuthor);
+$(document).ready(filterByAuthor);
 </script>
