@@ -36,7 +36,7 @@
 <div class="sidebar-item sidebar-nav">
   <ul class="nav">
     <li class="nav-title">Authors</li>
-    {% assign authors = "Chandler,Alice,Bob,Eve" | split: "," %}
+    {% assign authors = "엄현석,송규림,김다혜,이재훈" | split: "," %}
     {% for author in authors %}
       <li>
         <a class="nav-item" href="{{ root_url }}/{{ site.category_dir }}#{{ author | downcase }}">
