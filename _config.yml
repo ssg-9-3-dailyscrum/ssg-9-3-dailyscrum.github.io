@@ -32,6 +32,7 @@ svg:
 # theme: minima
 highlighter-theme: monokai
 date_format: "%Y-%M-%D"
+permalink: /:year/:month/:day/:title/
 plugins:
   - jekyll-feed
 category_dir: category/
