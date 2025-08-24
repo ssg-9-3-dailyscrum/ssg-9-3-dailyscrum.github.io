@@ -113,6 +113,7 @@ git checkout 본인브랜치
 YYYY-MM-DD-이름.md 파일 맨 위에 작성
 ```
 ---
+layout: post
 title: "DailyScrum" # 제목
 date: 2025-08-24 # YYYY-MM-DD 형식 (파일명과 일치해야 함)
 author: "송규림" # 본인 이름으로 변경
