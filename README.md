@@ -70,19 +70,31 @@ git push origin SGL
 
 ![alt text](/public/img/screenshot-3.png)
 
-- base를 main으로, compare을 본인 브랜치로 설정
+- base를 main으로, compare을 본인 브랜치로 설정 후 Create Pull Request
 
 ![alt text](/public/img/screenshot-4.png)
+
+- title 및 decription 작성 후 Create Pull Request
+
+![alt text](/public/img/screenshot-5.png)
+
+- 파일 변경 내역 확인 및 병합 요청
+
+> 본인 브랜치에서 어떤 파일들이 변경되었는지 'Files changed' 탭에서 확인 후, 변경 사항에 문제가 없다고 판단되면 병합을 요청
+
+- 팀원 검토 및 승인
+
+> 다른 팀원 중 한 명이 PR을 확인하고, 변경 사항에 문제가 없으면 승인(Approve), 승인이 완료되면 메인 브랜치(main)와 자동으로 병합
+
 
 #### 6. 로컬 저장소 최신화
 ```
 git checkout main
 git pull origin main
 git checkout 본인브랜치
-
-// 충돌이 발생하면 충돌 해결하고 merge
-git merge main
 ```
+충돌이 발생하면 충돌 해결하고 `git merge main`
+
 
 > 4 ~ 6 작업 반복
 
