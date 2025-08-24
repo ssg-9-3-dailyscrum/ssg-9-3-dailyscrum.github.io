@@ -1,7 +1,7 @@
 ---
 layout: page
-title: About
-permalink: /about/
+title: Guideline
+permalink: /Guideline/
 ---
 
 
@@ -22,12 +22,13 @@ permalink: /about/
 #### 2. 초기 설정
 
 ```
-git cd [로컬 저장소 경로]  
+cd [로컬 저장소 경로]  
 git checkout main
 git pull origin main
 ```
 예시:
-`git cd c/study/ssg-9-3-dailyscrum.github.io`
+
+`cd c/study/ssg-9-3-dailyscrum.github.io`
 
 
 #### 3. 브랜치 생성
@@ -37,6 +38,7 @@ git checkout -b [브랜치이름] // 브랜치 생성과 동시에 이동
 git branch // 현재 브랜치 위치 확인 명령어 (본인껄로 설정되어 있어야 함)
 ```
 예시:
+
 `git checkout -b SGL`
 
 
@@ -102,6 +104,8 @@ git checkout 본인브랜치
 
 #### 1. 파일명
 > _posts/YYYY-MM-DD-작성자이름.md
+
+예시:
 
 `_posts/2025-08-24-송규림.md`
 
