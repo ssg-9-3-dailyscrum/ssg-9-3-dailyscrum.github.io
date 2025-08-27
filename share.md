@@ -16,7 +16,7 @@ permalink: /share/
   {% for post in site.categories.Share %}
   <article class="post-item">
     <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-    <p class="post-meta">{{ post.date | date: "%Y년 %m월 %d일" }}</p>
+    <p class="post-meta">{{ post.date | date: "%Y년 %m월 %d일" }} {{ post.author }}</p>
   </article>
   {% endfor %}
 </div>
