@@ -53,7 +53,7 @@ git push origin 본인브랜치
 ```
 예시:
 ```
-git add 2025-08-24.송규림.md
+git add 2025-08-24-송규림.md
 git commit -m "250824 SGL"
 git push origin SGL
 ```
@@ -94,20 +94,19 @@ git push origin SGL
 git checkout main
 git pull origin main
 git checkout 본인브랜치
+git merge main // 충돌 예방
 ```
-충돌이 발생하면 충돌 해결하고 `git merge main`
-
 
 > 4 ~ 6 작업 반복
 
 ### 새 스크럼 작성
 
 #### 1. 파일명
-> _posts/YYYY-MM-DD-작성자이름.md
+> _posts/YYYY/MM/YYYY-MM-DD-작성자이름.md
 
 예시:
 
-`_posts/2025-08-24-송규림.md`
+`_posts/2025/08/2025-08-24-송규림.md`
 
 #### 2. 메타데이터
 YYYY-MM-DD-이름.md 파일 맨 위에 작성
@@ -139,6 +138,6 @@ author: "송규림" # 본인 이름으로 변경
 - 공유
 ```
 
-> ※ 스크럼 작성할 때는 반드시 main 에서 pull 받아온 후 진행해주세요 !!
+> ※ 스크럼 작성하기 전에 반드시 main 에서 pull 받아오기 + 본인 브랜치랑 메인 브랜치 merge  진행해주세요 !!
 
 
