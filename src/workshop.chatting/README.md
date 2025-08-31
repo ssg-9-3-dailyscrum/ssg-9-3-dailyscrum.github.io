@@ -104,11 +104,11 @@ java -cp out ChatClient 127.0.0.1 5000 ShinSaegae
 ## 구현
 
 
-![alt text](/src/img/image1.png)
+![alt text](/src/workshop.chatting/img/image1.png)
 
 
-![alt text](/src/img/image2.png)
+![alt text](/src/workshop.chatting/img/image2.png)
 
 
-![alt text](/src/img/image3.png)
+![alt text](/src/workshop.chatting/img/image3.png)
 
