@@ -8,7 +8,7 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 #
-# If you need help with YAML syntax, here are some quick references for you: 
+# If you need help with YAML syntax, here are some quick references for you:
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 # https://learnxinyminutes.com/docs/yaml/
 #
@@ -34,6 +34,10 @@ highlighter-theme: monokai
 date_format: "%Y-%M-%D"
 plugins:
   - jekyll-feed
+  - jekyll-paginate
+paginate: 16  # 한 페이지에 보여줄  게시글 수 (5개로 설정)
+paginate_path: "/page/:num/" # 2페이지부터 적용될 주소 형식 (예: yoursite.com/page/2/)
+
 category_dir: category/
 tag_dir: tag/
 source: .
