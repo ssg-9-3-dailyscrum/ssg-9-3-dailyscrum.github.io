@@ -3,25 +3,67 @@
     <div class="post-title">Scrum</div>
   </header>
 
+
+  <style>
+    .post-item {
+      margin-bottom: 20px;
+    }
+    .post-item h2 a {
+      color: #000;
+      /*text-decoration: underline;*/
+    }
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 40px;
+    }
+    .pagination a, .pagination span {
+      padding: 8px 16px;
+      border: 1px solid #ddd;
+      margin: 0 4px;
+      text-decoration: none;
+      color: #333;
+    }
+    .pagination .disabled {
+      color: #ccc;
+      border-color: #eee;
+    }
+  </style>
+
+
   <div class="post-content">
       {%- if site.posts.size > 0 -%}
-    <ul class="post-list">
-      {%- for post in site.posts -%}
-      {%- unless post.categories contains 'Share' -%}
-      <li class="post-list-item">
-        <!-- {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%} -->
-        {%- assign date_format = "%Y/%m/%d" -%}
-        <span class="post-date">{{ post.date | date: date_format }}</span>
-        &nbsp;<span class="post-author"> {{ post.author }}</span>
-        &nbsp;   <a class="post-link" href="{{ post.url | relative_url }}">
-    	    {{ post.title | escape }}
-		</a>
-        {%- if site.show_excerpts -%}{{ post.excerpt }}{%- endif -%}
-      </li>
+    <div class="posts-list">
+      {%- for post in paginator.posts -%}
+      {%- unless post.categories contains '' -%}
+      <article class="post-item">
+        <h2><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
+        {%- assign date_format = "%Y년 %m월 %d일" -%}
+        <p class="post-meta">{{ post.date | date: date_format }}  {{ post.author }}</p>
+      </article>
       {%- endunless -%}
       {%- endfor -%}
-    </ul>
+    </div>
   {%- endif -%}
+  </div>
+
+  <div class="pagination">
+    {%- if paginator.previous_page -%}
+    <a href="{{ paginator.previous_page_path }}" class="previous">이전</a>
+    {%- else -%}
+    <span class="previous disabled">이전</span>
+    {%- endif -%}
+
+    <span class="page_number">
+    {{ paginator.page }} / {{ paginator.total_pages }}
+  </span>
+
+    {%- if paginator.next_page -%}
+    <a href="{{ paginator.next_page_path }}" class="next">다음</a>
+    {%- else -%}
+    <span class="next disabled">다음</span>
+    {%- endif -%}
   </div>
 </article>
 
